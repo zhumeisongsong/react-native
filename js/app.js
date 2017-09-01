@@ -9,7 +9,10 @@ import {StackNavigator} from 'react-navigation';
 
 class HomeScreen extends React.Component {
     static navigationOptions = {
-        title: 'Welcome',
+        tabBarLabel: 'Home',//showIcon option
+        tabBarIcon: ({tintColor}) => (
+            <Image source={require()}
+        )
     };
 
     render() {
@@ -30,6 +33,7 @@ class ChatScreen extends React.Component {
     static navigationOptions = {
         title: 'Chat with Lucy',
     };
+
     render() {
         return (
             <View>
@@ -40,8 +44,8 @@ class ChatScreen extends React.Component {
 }
 
 const Hope = StackNavigator({
-    Home: { screen: HomeScreen },
-    Chat: { screen: ChatScreen },
+    Home: {screen: HomeScreen},
+    Chat: {screen: ChatScreen},
 });
 
 AppRegistry.registerComponent('Hope', () => Hope);
