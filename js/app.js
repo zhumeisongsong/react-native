@@ -7,26 +7,18 @@ import {
   Image,
   StyleSheet
 } from 'react-native';
-
 import {TabNavigator} from 'react-navigation';
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
     tabBarLabel: 'Home',//showIcon option
-    tabBarIcon: ({tintColor}) => (
-      <Image
-        source={require('../img/svg/home.svg')}
-        style={[styles.icon,{tintColor:tintColor}]}
-      />
-    )
   };
 
   render() {
     return (
-      <Button
-        onPress={()=>this.props.navigation.navigate('Notifications')}
-        title="go to notifications"
-      />
+      <View>
+        <Text>dededfsdfdsfdsfsderewre</Text>
+      </View>
     );
   }
 }
@@ -34,7 +26,7 @@ class HomeScreen extends React.Component {
 class MyNotificationsScreen extends React.Component {
   static navigationOptions = {
     tabBarLabel: 'Notifications',
-    tabBarIcon: ({ tintColor }) => (
+    tabBarIcon: ({tintColor}) => (
       <Image
         source={require('../img/svg/my.svg')}
         style={[styles.icon, {tintColor: tintColor}]}
@@ -66,7 +58,7 @@ const Hope = TabNavigator({
   Notifications: {
     screen: MyNotificationsScreen,
   },
-},{
+}, {
   tabBarOptions: {
     activeTintColor: '#e91e63',
   },
