@@ -12,13 +12,7 @@ import {TabNavigator} from 'react-navigation';
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
-    tabBarLabel: 'Home',//showIcon option
-    tabBarIcon: ({tintColor}) => (
-      <Image
-        source={require('../img/svg/home.svg')}
-        style={[styles.icon,{tintColor:tintColor}]}
-      />
-    )
+    tabBarLabel: '首页',//showIcon option
   };
 
   render() {
@@ -33,13 +27,7 @@ class HomeScreen extends React.Component {
 
 class MyNotificationsScreen extends React.Component {
   static navigationOptions = {
-    tabBarLabel: 'Notifications',
-    tabBarIcon: ({ tintColor }) => (
-      <Image
-        source={require('../img/svg/my.svg')}
-        style={[styles.icon, {tintColor: tintColor}]}
-      />
-    ),
+    tabBarLabel: '购物车',
   };
 
   render() {

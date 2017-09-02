@@ -54,3 +54,5 @@ fastlane/screenshots
 
 yarn.lock
 package-lock.json
+gen
+projectFilesBackup
