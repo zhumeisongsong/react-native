@@ -2,11 +2,28 @@ import React from 'react';
 import {
   AppRegistry,
   View,
-  Text,
   Button,
   Image,
   StyleSheet
 } from 'react-native';
+
+import Svg,{
+  Circle,
+  Ellipse,
+  G,
+  LinearGradient,
+  RadialGradient,
+  Line,
+  Path,
+  Polygon,
+  Polyline,
+  Rect,
+  Symbol,
+  Text,
+  Use,
+  Defs,
+  Stop
+} from 'react-native-svg';
 
 import {TabNavigator} from 'react-navigation';
 
@@ -32,10 +49,19 @@ class MyNotificationsScreen extends React.Component {
 
   render() {
     return (
-      <Button
-        onPress={() => this.props.navigation.goBack()}
-        title="Go back home"
-      />
+     <View>
+       <Svg
+         height="100"
+         width="100"
+       >
+         <Circle
+           cx="50"
+           cy="50"
+           r="50"
+           fill="pink"
+         />
+       </Svg>
+     </View>
     );
   }
 }
