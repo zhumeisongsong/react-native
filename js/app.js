@@ -1,3 +1,5 @@
+'use strict';
+
 import React from 'react';
 import {
   AppRegistry,
@@ -7,23 +9,8 @@ import {
   StyleSheet
 } from 'react-native';
 
-import Svg,{
-  Circle,
-  Ellipse,
-  G,
-  LinearGradient,
-  RadialGradient,
-  Line,
-  Path,
-  Polygon,
-  Polyline,
-  Rect,
-  Symbol,
-  Text,
-  Use,
-  Defs,
-  Stop
-} from 'react-native-svg';
+import Svg from './common/SvgUri';
+import svgs from './img/svgs';
 
 import {TabNavigator} from 'react-navigation';
 
@@ -49,19 +36,13 @@ class MyNotificationsScreen extends React.Component {
 
   render() {
     return (
-     <View>
-       <Svg
-         height="100"
-         width="100"
-       >
-         <Circle
-           cx="50"
-           cy="50"
-           r="50"
-           fill="pink"
-         />
-       </Svg>
-     </View>
+      <View>
+        {
+          Object.keys(svgs).map((icon, index) =>
+            <Svg key={`key-${index}`} icon={icon} size="30" />
+          )
+        }
+      </View>
     );
   }
 }
