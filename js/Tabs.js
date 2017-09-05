@@ -14,8 +14,6 @@ import svgs from './img/svgs';
 
 import {TabNavigator} from 'react-navigation';
 
-import ProductsList from './components/ProductsList';
-
 class Home extends React.Component {
   static navigationOptions = {
     tabBarLabel: '首页',//showIcon option
@@ -26,7 +24,7 @@ class Home extends React.Component {
 
   render() {
     return (
-      <ProductsList/>
+     <Text>home</Text>
     );
   }
 }
@@ -41,10 +39,7 @@ class Cart extends React.Component {
 
   render() {
     return (
-      <Button
-        onPress={()=>this.props.navigation.navigate('home')}
-        title="go to home"
-      />
+      <Text>cart</Text>
     );
   }
 }
