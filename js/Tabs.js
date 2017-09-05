@@ -3,8 +3,9 @@ import React from 'react';
 import {
   AppRegistry,
   View,
-  Button,
   Image,
+  Text,
+  Button,
   StyleSheet
 } from 'react-native';
 
@@ -13,20 +14,19 @@ import svgs from './img/svgs';
 
 import {TabNavigator} from 'react-navigation';
 
+import ProductsList from './components/ProductsList';
+
 class Home extends React.Component {
   static navigationOptions = {
     tabBarLabel: '首页',//showIcon option
     tabBarIcon: (
-      <Svg icon="home" size="26" />
+      <Svg icon="home" size="30"/>
     ),
   };
 
   render() {
     return (
-      <Button
-        onPress={()=>this.props.navigation.navigate('cart')}
-        title="go to cart"
-      />
+      <ProductsList/>
     );
   }
 }
@@ -35,7 +35,7 @@ class Cart extends React.Component {
   static navigationOptions = {
     tabBarLabel: '购物车',
     tabBarIcon: (
-      <Svg icon="cart" size="26" />
+      <Svg icon="cart" size="30"/>
     ),
   };
 
@@ -49,17 +49,35 @@ class Cart extends React.Component {
   }
 }
 
-const Hope = TabNavigator({
+class My extends React.Component {
+  static navigationOptions = {
+    tabBarLabel: '我的',
+    tabBarIcon: (
+      <Svg icon="my" size="30"/>
+    ),
+  };
+
+  render(){
+    return(
+      <View>
+        <Text>User Center</Text>
+      </View>
+    )
+  }
+}
+
+export const Hope = TabNavigator({
   Home: {
     screen: Home
   },
-  Notifications: {
+  Cart: {
     screen: Cart
   },
-},{
+  My: {
+    screen: My
+  }
+}, {
   tabBarOptions: {
     activeTintColor: '#e91e63',
   },
 });
-
-AppRegistry.registerComponent('Hope', () => Hope);

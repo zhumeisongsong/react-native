@@ -1,5 +1,3 @@
-'use strict';
-
 const LOCATION_COLORS = {
   'HERBST': '#00E3AD',
   'HERBST A': '#00E3AD',
