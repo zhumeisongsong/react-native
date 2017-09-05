@@ -14,7 +14,10 @@ import svgs from './img/svgs';
 
 import {TabNavigator} from 'react-navigation';
 
-class Home extends React.Component {
+import ProductList from './components/ProductsList';
+import Cart from './components/Cart';
+
+class HomeScreen extends React.Component {
   static navigationOptions = {
     tabBarLabel: '首页',//showIcon option
     tabBarIcon: (
@@ -24,12 +27,12 @@ class Home extends React.Component {
 
   render() {
     return (
-     <Text>home</Text>
+      <ProductList/>
     );
   }
 }
 
-class Cart extends React.Component {
+class CartScreen extends React.Component {
   static navigationOptions = {
     tabBarLabel: '购物车',
     tabBarIcon: (
@@ -39,12 +42,12 @@ class Cart extends React.Component {
 
   render() {
     return (
-      <Text>cart</Text>
+      <Cart/>
     );
   }
 }
 
-class My extends React.Component {
+class MyScreen extends React.Component {
   static navigationOptions = {
     tabBarLabel: '我的',
     tabBarIcon: (
@@ -52,8 +55,8 @@ class My extends React.Component {
     ),
   };
 
-  render(){
-    return(
+  render() {
+    return (
       <View>
         <Text>User Center</Text>
       </View>
@@ -63,13 +66,13 @@ class My extends React.Component {
 
 export const Hope = TabNavigator({
   Home: {
-    screen: Home
+    screen: HomeScreen
   },
   Cart: {
-    screen: Cart
+    screen: CartScreen
   },
   My: {
-    screen: My
+    screen: MyScreen
   }
 }, {
   tabBarOptions: {
